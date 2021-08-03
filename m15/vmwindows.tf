@@ -1,7 +1,7 @@
 
 
 resource "azurerm_public_ip" "pipwin" {
-  name                    = "${var.prefixlnx}-pip"
+  name                    = "${var.prefixwin}-pip"
   resource_group_name     = azurerm_resource_group.rg.name
   location                = azurerm_resource_group.rg.location
   allocation_method       = "Dynamic"
@@ -14,7 +14,7 @@ resource "azurerm_public_ip" "pipwin" {
 }
 
 resource "azurerm_network_interface" "nicwin" {
-  name                = "${var.prefixlnx}-nic"
+  name                = "${var.prefixwin}-nic"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -27,7 +27,7 @@ resource "azurerm_network_interface" "nicwin" {
 }
 
 resource "azurerm_windows_virtual_machine" "vmwin" {
-  name                = var.prefixlnx
+  name                = var.prefixwin
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   size                = "Standard_F2"
@@ -40,7 +40,7 @@ resource "azurerm_windows_virtual_machine" "vmwin" {
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
-    name = "${var.prefixlnx}-OSDisk"
+    name = "${var.prefixwin}-OSDisk"
   }
 
   source_image_reference {

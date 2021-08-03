@@ -53,6 +53,8 @@ resource "azurerm_linux_virtual_machine" "vmlinux" {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
+  
+disable_password_authentication = false
 
   tags = {
     environment = "staging"
