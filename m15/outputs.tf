@@ -3,5 +3,5 @@ output "PIP-LINUX" {
 }
 
 output "PIP-WINDOWS" {
-  value = azurerm_windows_virtual_machine.vmwin.public_ip_address
+  value = "mstsc v:/${azurerm_windows_virtual_machine.vmwin.public_ip_address}"
 }
