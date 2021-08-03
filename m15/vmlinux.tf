@@ -35,11 +35,12 @@ resource "azurerm_linux_virtual_machine" "vmlinux" {
   network_interface_ids = [azurerm_network_interface.niclnx.id]
   size                  = "Standard_DS1_v2"
   admin_username        = "adminuser"
+  admin_password = "Swell2016!!!"
 
-  admin_ssh_key {
-    username   = "adminuser"
-    public_key = file("~/.ssh/id_rsa.pub")
-  }
+ // admin_ssh_key {
+ //   username   = "adminuser"
+ //   public_key = remote("~/.ssh/id_rsa.pub")
+ // }
 
   source_image_reference {
     publisher = "Canonical"
