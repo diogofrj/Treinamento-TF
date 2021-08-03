@@ -49,5 +49,8 @@ resource "azurerm_windows_virtual_machine" "vmwin" {
     sku       = "2019-Datacenter-Smalldisk"
     version   = "latest"
   }
+  tags = {
+    "keyterra" = "terraformtest"
+  }
 
 }
