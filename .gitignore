@@ -33,3 +33,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 m15/.terraform.lock.hcl
+700/.terraform.lock.hcl
+700/.terraformignore
